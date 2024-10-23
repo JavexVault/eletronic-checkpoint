@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/styleDashboard.css">
     <title>DashBoard</title>
 </head>
+
 <body>
     <main>
         <header>
@@ -22,33 +24,36 @@
                 <p>17:30</p>
             </div>
             <div id="dialog-bater-ponto">
-                    <div id="dialog-header">
-                        <p>18:40</p>
-                        <p>22/10/2024</p>
-                    </div>
-                    <div id="dialog-footer">
-                        <p>Selecione o tipo de ponto</p>
-                        <select name="Tipo" id="">
-                            <option value="">Entrada</option>
-                            <option value="">Saida</option>
-                            <option value="">Intervalo Ida</option>
-                            <option value="">Intervalo Volta</option>
-                            <option value="">Justificar Falta</option>
-                            <option value="">Marcar hora passada</option>
-                        </select>
-                        <button>Registrar</button>
-                    </div>
+                <button id="fechar-dialog-bater-ponto">X</button>
+                <div id="dialog-header">
+                    <p>18:40</p>
+                    <p>22/10/2024</p>
+                </div>
+                <div id="dialog-footer">
+                    <p>Selecione o tipo de ponto</p>
+                    <select name="Tipo" id="">
+                        <option value="">Entrada</option>
+                        <option value="">Saida</option>
+                        <option value="">Intervalo Ida</option>
+                        <option value="">Intervalo Volta</option>
+                        <option value="">Justificar Falta</option>
+                        <option value="">Marcar hora passada</option>
+                    </select>
+                    <button>Registrar</button>
+                </div>
             </div>
         </div>
         <div id="funcoes">
             <a href="register.html"><button id="btn-registrar" class="botao">Registros</button></a>
-            <button id="btn-bater-ponto" class="botao">Bater Ponto</button>                
+            <button id="btn-bater-ponto" class="botao">Bater Ponto</button>
             <button class="botao">Calcular</button>
         </div>
         <footer>
             <p>Javex™ all rights reserved </p>
         </footer>
+        <div id="blur-background"></div>
         <script src="../JS/script.js"></script>
     </main>
 </body>
+
 </html>

@@ -5,8 +5,12 @@
     padding: 0;
 }
 
+body {
+    height: 100vh;
+}
+
 main {
-    min-height: 100vh;
+    height: 100%;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -43,7 +47,7 @@ header {
     height: 70vh;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     background-color: red;
 }
@@ -85,17 +89,32 @@ footer {
 }
 
 #dialog-bater-ponto {
+    display: none;
     height: 20rem;
     width: 35rem;
-    display: flex;
+    position: absolute;
+    z-index: 2;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     background-color: orange;
 }
 
+#fechar-dialog-bater-ponto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2rem;
+    height: 2rem;
+    background-color: #f9f9f9;
+    border: none;
+    cursor: pointer;
+}
+
 #dialog-header {
-    display: none;
     height: 50%;
     width: 100%;
     display: flex;
@@ -106,7 +125,6 @@ footer {
 }
 
 #dialog-footer {
-    display: none;
     height: 50%;
     width: 100%;
     display: flex;
@@ -114,4 +132,14 @@ footer {
     align-items: center;
     justify-content: space-around;
     background-color: yellow;
+}
+
+#blur-background {
+    display: none;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background-color: #00000088;
+    backdrop-filter: blur(3px);
 }
