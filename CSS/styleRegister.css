@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    height: 3rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: blue;
+}
+
+#logo {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 20px;
+}
+
+#titulo {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    padding-right: 20px;
+}
+
+#fundo {
+    background-color: aquamarine;
+    margin: 30px;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.registro{
+    background-color: blanchedalmond;
+    margin: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.nome-e-tipo{
+    background-color: violet;
+    padding-left: 4px;
+    padding-right: 4px;
+    width: 10rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.nome-e-tipo p {
+    font-size: 18px;
+}
+
+.botoes-info{
+    background-color: cadetblue;
+    padding-left: 4px;
+    padding-right: 4px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#editar-registro{
+    background-color: yellow;
+    width: 25px;
+}
+
+#excluir-registro{
+    color: white;
+    background-color: red;
+    width: 25px;
+}

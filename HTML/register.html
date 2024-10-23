@@ -4,8 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registros</title>
+    <link rel="stylesheet" href="../CSS/styleRegister.css">
 </head>
 <body>
+
+    <main>
+        <header>
+            <div id="logo">
+                <a href="dashboard.html">Aqui sera uma imagem</a>
+            </div>
+            <div id="titulo">
+                <p>Eletronic Checkpoint</p>
+            </div>
+            <!-- Era pra ter mais alguma coisa nesse header, não lembro o que... -->
+        </header>
+
+        <div id="fundo">
+            <!-- As divs abaixo são exemplos, ok? Estou fazendo de acordo com o desenho do loirin ☝️ -->
+            <!-- O id "tipo-ponto" diz respeito se o ponto é de entrada, intervalo, volta do intervalo ou saída.  -->
+            <div class="registro">
+                <div class="nome-e-tipo">
+                    <p>Pedro Henrique</p>
+                    <p id="tipo-ponto">Saída</p>
+                </div>
+                <!-- A classe "botoes-info" se refere aos botões para editar e/ou excluir o registro, além da data e horário exatos do ponto. -->
+                <div class="botoes-info">
+                    <button id="editar-registro">/<!-- Um logo de canetinha, talvez? --></button>
+                    <button id="excluir-registro">X</button>
+                    <p>19:02</p>
+                    <p>22/10/2024</p>
+                </div>
+            </div>
+
+            <div class="registro">
+                <div class="nome-e-tipo">
+                    <p>Pedro Henrique</p>
+                    <p id="tipo-ponto">Volta Intervalo</p>
+                </div>
+                <!-- A classe "botoes-info" se refere aos botões para editar e/ou excluir o registro, além da data e horário exatos do ponto. -->
+                <div class="botoes-info">
+                    <button id="editar-registro"> /<!-- Um logo de canetinha, talvez? --> </button>
+                    <button id="excluir-registro">X</button>
+                    <p>16:30</p>
+                    <p>22/10/2024</p>
+            </div>
+        </div>
+    </main>
+
     <script src=""></script>
 </body>
 </html>
