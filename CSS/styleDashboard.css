@@ -42,24 +42,24 @@ header {
 #conteudoPrincipal {
     height: 70vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
     background-color: red;
 }
 
 #informacoes {
     height: 20rem;
-    width: 30rem;
+    width: 25rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    margin-left: 30px;
     background-color: orange;
 }
 
 #funcoes {
-    height: 40vh;
+    height: 17vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -82,4 +82,36 @@ footer {
     align-items: center;
     justify-content: center;
     background-color: blue;
+}
+
+#dialog-bater-ponto {
+    height: 20rem;
+    width: 35rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: orange;
+}
+
+#dialog-header {
+    display: none;
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: green;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#dialog-footer {
+    display: none;
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: yellow;
 }
