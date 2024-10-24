@@ -1,21 +1,36 @@
+/////////////////////////////////////////
+// Variaveis do arquivo dashboard.html //
+/////////////////////////////////////////
+
 const btnBaterPonto = document.getElementById('btn-bater-ponto');
 const dialogRegistrar = document.getElementById('dialog-registrar-ponto');
 const fecharDialogBaterPonto = document.getElementById('fechar-dialog-bater-ponto');
 const dialogBaterPonto = document.getElementById('dialog-bater-ponto');
 const blurBackground = document.getElementById('blur-background');
 const hour = document.getElementById('hour');
-
 const data = document.getElementById('date');
+
+//////////////////////////////////////////
+// Função que faz div 'dialog' aparecer //
+//////////////////////////////////////////
 
 btnBaterPonto.addEventListener('click', () => {
     dialogBaterPonto.style.display = 'flex';
     blurBackground.style.display = 'block';
 });
 
+///////////////////////////////////////////////
+// Função que faz a div 'dialog' desaparecer //
+///////////////////////////////////////////////
+
 fecharDialogBaterPonto.addEventListener('click', () => {
     dialogBaterPonto.style.display = 'none';
     blurBackground.style.display = 'none';
 });
+
+//////////////////////////////////////////////////////////////
+// Função que recebe a hora os minutos e os segundos atuais //
+//////////////////////////////////////////////////////////////
 
 function getHour() {
     const date = new Date();
@@ -24,15 +39,18 @@ function getHour() {
     const seconds = String(date.getSeconds()).padStart(2,"0");
     hour.innerText = `${hours}:${minutes}:${seconds}`;
 }
-setInterval(getHour,0000)
+setInterval(getHour,0000) //to do ta errado colocar 0000!
+
+////////////////////////////////////////////////
+// Função que recebe o dia o mês e o ano atual//
+////////////////////////////////////////////////
 
 function getDate (){
     const date = new Date();
     const day = String(date.getDate()).padStart(2,"0");
     const month = String(date.getMonth() + 1).padStart(2,"0");
     const year = date.getFullYear();
-
     data.innerText = `${day}/${month}/${year}`
-
 }
-getDate()
+setInterval(getDate,0000) //to do ta errado colocar 0000!
+
