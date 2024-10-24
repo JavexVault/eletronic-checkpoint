@@ -6,7 +6,7 @@
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
 }
 
 main {
@@ -77,10 +77,11 @@ header {
     background-color: #f9f9f9;
     border: #f9f9f9;
     border-radius: 40px;
+    cursor: pointer;
 }
 
 footer {
-    height: 2rem;
+    height: 5rem;
     display: flex;
     flex-direction: column;
     align-items: center;

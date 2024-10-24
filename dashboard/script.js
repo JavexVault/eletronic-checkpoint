@@ -1,6 +1,10 @@
+import { getUser } from "../global.js";
+
+
 /////////////////////////////////////////
 // Variaveis do arquivo dashboard.html //
 /////////////////////////////////////////
+
 
 const btnBaterPonto = document.getElementById('btn-bater-ponto');
 const dialogRegistrar = document.getElementById('dialog-registrar-ponto');
@@ -11,7 +15,7 @@ const hour = document.getElementById('hour');
 const data = document.getElementById('date');
 
 const dialogHora = document.getElementById('dialog-hora');
-const dialogData = document.getElementById('dialog-data')
+const dialogData = document.getElementById('dialog-data');
 
 //////////////////////////////////////////
 // Função que faz div 'dialog' aparecer //
@@ -20,6 +24,10 @@ const dialogData = document.getElementById('dialog-data')
 btnBaterPonto.addEventListener('click', () => {
     dialogBaterPonto.style.display = 'flex';
     blurBackground.style.display = 'block';
+
+    salvaDataEHora();
+
+    console.log(getUser());
 });
 
 ///////////////////////////////////////////////
@@ -50,7 +58,7 @@ setInterval(getHour, 1000)
 // Função que recebe o dia o mês e o ano atual//
 ////////////////////////////////////////////////
 
-function getDate (){
+function getDate() {
     const date = new Date();
     const day = String(date.getDate()).padStart(2,"0");
     const month = String(date.getMonth() + 1).padStart(2,"0");
@@ -61,3 +69,23 @@ function getDate (){
 getDate()
 setInterval(getDate, 1000)
 
+function salvaDataEHora() {
+    const date = new Date();
+    const day = String(date.getDate()).padStart(2,"0");
+    const month = String(date.getMonth() + 1).padStart(2,"0");
+    const year = date.getFullYear();
+    const hours = String(date.getHours()).padStart(2,"0");
+    const minutes = String(date.getMinutes()).padStart(2,"0");
+    const seconds = String(date.getSeconds()).padStart(2,"0");
+
+    dialogHora.innerText = `${hours}:${minutes}:${seconds}`;
+    dialogData.innerText = `${day}/${month}/${year}`
+}
+
+
+
+
+
+
+
+////////////////////////////////////////////////
