@@ -39,7 +39,9 @@ function getHour() {
     const seconds = String(date.getSeconds()).padStart(2,"0");
     hour.innerText = `${hours}:${minutes}:${seconds}`;
 }
-setInterval(getHour,0000) //to do ta errado colocar 0000!
+
+getHour()
+setInterval(getHour, 1000)
 
 ////////////////////////////////////////////////
 // Função que recebe o dia o mês e o ano atual//
@@ -52,5 +54,7 @@ function getDate (){
     const year = date.getFullYear();
     data.innerText = `${day}/${month}/${year}`
 }
-setInterval(getDate,0000) //to do ta errado colocar 0000!
+
+getDate()
+setInterval(getDate, 1000)
 
