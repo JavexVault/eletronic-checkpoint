@@ -18,12 +18,12 @@ fecharDialogBaterPonto.addEventListener('click', () => {
 
 function getHour() {
     const date = new Date();
-    const hours = date.getHours();
-    const minutes = date.getMinutes();
-    const seconds = date.getSeconds();
-
-    setInterval(() => {}, 2);
+    const hours = String(date.getHours()).padStart(2,"0");
+    const minutes = String(date.getMinutes()).padStart(2,"0");
+    const seconds = String(date.getSeconds()).padStart(2,"0");
 
     hour.innerText = `${hours}:${minutes}:${seconds}`;
 }
+
+setInterval(getHour,0000)
 
