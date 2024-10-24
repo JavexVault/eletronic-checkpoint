@@ -10,6 +10,9 @@ const blurBackground = document.getElementById('blur-background');
 const hour = document.getElementById('hour');
 const data = document.getElementById('date');
 
+const dialogHora = document.getElementById('dialog-hora');
+const dialogData = document.getElementById('dialog-data')
+
 //////////////////////////////////////////
 // Função que faz div 'dialog' aparecer //
 //////////////////////////////////////////
