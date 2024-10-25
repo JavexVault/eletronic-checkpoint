@@ -135,6 +135,18 @@ footer {
     background-color: yellow;
 }
 
+#dialog-ponto-passado {
+
+    height: 20rem;
+    width: 35rem;
+    position: absolute;
+    z-index: 3;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: orange;
+}
+
 #blur-background {
     display: none;
     z-index: 1;
