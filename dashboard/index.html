@@ -15,7 +15,7 @@
                 <a href="../home/index.html">Aqui sera uma imagem</a>
             </div>
             <div id="titulo">
-                <p>Eletronic Checkpoint</p>
+                <p>Electronic Checkpoint</p>
             </div>
         </header>
         <div id="conteudoPrincipal">
@@ -68,10 +68,21 @@
         <div id="funcoes">
             <a href="../register/index.html"><button id="btn-registrar" class="botao">Registros</button></a>
             <button id="btn-bater-ponto" class="botao">Bater Ponto</button>
-            <button class="botao">Calcular</button>
+            <button class="botao" id="calcular">Calcular</button>
+            <div id="calculo-content">
+                <button id="fechar-calculo">X</button>
+                <p>Calcule seu salário</p>
+                <label for="horas-trabalhadas">Horas trabalhadas:</label>
+                <input type="number" id="horas-trabalhadas" placeholder="Digite as horas trabalhadas">   
+
+                <label for="valor-hora">Valor por hora:</label>
+                <input type="number" id="valor-hora" placeholder="Digite o valor por hora">
+                    
+                <button id="btn-calcular-salario">Calcular Salário</button>
+            </div>            
         </div>
         <footer>
-            <p>Javex™ all rights reserved </p>
+            <p>Javex™ All Rights Reserved </p>
         </footer>
         <div id="blur-background"></div>
         <script src="./script.js"></script>

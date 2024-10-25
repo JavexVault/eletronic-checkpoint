@@ -31,9 +31,12 @@ const hour = document.getElementById('hour');
 const data = document.getElementById('date');
 const dlgBaterPontoRegistro = document.getElementById('dlg-bater-ponto-registro');
 const tipoEntrada = document.getElementById('tipo-entrada');
-
 const dialogHora = document.getElementById('dialog-hora');
 const dialogData = document.getElementById('dialog-data');
+
+const calcularBtn = document.getElementById('calcular');
+const calculoContent = document.getElementById('calculo-content');
+const fecharCalculoBtn = document.getElementById('fechar-calculo');
 
 //////////////////////////////////////////
 // Função que faz div 'dialog' aparecer //
@@ -107,7 +110,6 @@ function salvaDataEHora() {
     user.date = `${day}/${month}/${year}`;
 }
 
-
 dlgBaterPontoRegistro.addEventListener('click', () => {
     user.type = tipoEntrada.value;
 
@@ -115,3 +117,22 @@ dlgBaterPontoRegistro.addEventListener('click', () => {
 
     localStorage.setItem('registers', JSON.stringify(registers));
 });
+
+
+// Manipulação do Dialog que aparece ao clicar no botão Calcular do Dashboard //
+calcularBtn.addEventListener('click', () => {
+    calculoContent.style.display = 'flex';
+    blurBackground.style.display = 'block';
+});
+
+fecharCalculoBtn.addEventListener('click', () => {
+    calculoContent.style.display = 'none';
+    blurBackground.style.display = 'none';
+});
+
+blurBackground.addEventListener('click', () => {
+    calculoContent.style.display = 'none';
+    blurBackground.style.display = 'none';
+});
+
+// Função que calcula o salário baseado no número de horas trabalhado //
