@@ -191,3 +191,70 @@ footer {
     backdrop-filter: blur(3px);
 }
 
+#calculo-content {
+    display: none; 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    flex-direction: column;
+    align-items: center;
+}
+
+#calculo-content p {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+#calculo-content label {
+    margin: 8px 0;
+    font-size: 1rem;
+}
+
+#calculo-content input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#btn-calcular-salario {
+    padding: 10px;
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#btn-calcular-salario:hover {
+    background-color: #45a049;
+}
+
+#fechar-calculo {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 25px;
+    height: 25px;
+    background-color: #ccc;
+    border: none;
+    border-radius: 50%;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#fechar-calculo:hover {
+    background-color: #bbb;
+}
+
+
