@@ -111,7 +111,7 @@ function salvaDataEHora() {
 dlgBaterPontoRegistro.addEventListener('click', () => {
     user.type = tipoEntrada.value;
 
-    registers.push(user);
+    registers.push({...user});
 
     localStorage.setItem('registers', JSON.stringify(registers));
 });
