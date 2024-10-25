@@ -135,16 +135,50 @@ footer {
     background-color: yellow;
 }
 
-#dialog-ponto-passado {
-
+#dialog-ponto-passado {      /*Alterar o dsiplay para ver o dialog OBS dialog incompleto e mal feito, infelizmente a noite me consumiu!*/
+    display: none;
+    flex-direction: row;
     height: 20rem;
     width: 35rem;
     position: absolute;
     z-index: 3;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
     background-color: orange;
+    position: absolute;
+}
+
+#dialog-passado-conteudo {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+    background-color: blue;
+}
+
+#dialog-passado-top{
+    height: 33.3%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: burlywood;
+}
+
+#dialog-passado-mid{
+    height: 33.3%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: yellow;
+}
+
+#dialog-passado-bottom{
+    height: 33.3%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: green;
 }
 
 #blur-background {
@@ -156,3 +190,4 @@ footer {
     background-color: #00000088;
     backdrop-filter: blur(3px);
 }
+
