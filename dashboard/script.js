@@ -1,5 +1,21 @@
-import { getUser } from "../global.js";
+const user = {
+    name: '',
+    date: '',
+    time: '',
+    type: '',
+};
 
+let registers = []
+
+///////////////////////////////////////////
+// Pegando o nome salvo no local storage //
+///////////////////////////////////////////
+
+const savedUserName = localStorage.getItem('userName');
+if (savedUserName) {
+    user.name = savedUserName;
+    localStorage.removeItem('userName');
+}
 
 /////////////////////////////////////////
 // Variaveis do arquivo dashboard.html //
@@ -13,6 +29,8 @@ const dialogBaterPonto = document.getElementById('dialog-bater-ponto');
 const blurBackground = document.getElementById('blur-background');
 const hour = document.getElementById('hour');
 const data = document.getElementById('date');
+const dlgBaterPontoRegistro = document.getElementById('dlg-bater-ponto-registro');
+const tipoEntrada = document.getElementById('tipo-entrada');
 
 const dialogHora = document.getElementById('dialog-hora');
 const dialogData = document.getElementById('dialog-data');
@@ -27,7 +45,7 @@ btnBaterPonto.addEventListener('click', () => {
 
     salvaDataEHora();
 
-    console.log(getUser());
+    console.log(user);
 });
 
 ///////////////////////////////////////////////
@@ -48,11 +66,13 @@ function getHour() {
     const hours = String(date.getHours()).padStart(2,"0");
     const minutes = String(date.getMinutes()).padStart(2,"0");
     const seconds = String(date.getSeconds()).padStart(2,"0");
-    hour.innerText = `${hours}:${minutes}:${seconds}`;
+    return `${hours}:${minutes}:${seconds}`;
 }
 
-getHour()
-setInterval(getHour, 1000)
+hour.innerText = getHour()
+setInterval(() => {
+    hour.innerText = getHour()
+}, 1000)
 
 ////////////////////////////////////////////////
 // Função que recebe o dia o mês e o ano atual//
@@ -63,11 +83,13 @@ function getDate() {
     const day = String(date.getDate()).padStart(2,"0");
     const month = String(date.getMonth() + 1).padStart(2,"0");
     const year = date.getFullYear();
-    data.innerText = `${day}/${month}/${year}`
+    return `${day}/${month}/${year}`;
 }
 
-getDate()
-setInterval(getDate, 1000)
+data.innerText = getDate()
+setInterval(() => {
+    data.innerText = getDate()
+}, 1000)
 
 function salvaDataEHora() {
     const date = new Date();
@@ -79,13 +101,17 @@ function salvaDataEHora() {
     const seconds = String(date.getSeconds()).padStart(2,"0");
 
     dialogHora.innerText = `${hours}:${minutes}:${seconds}`;
-    dialogData.innerText = `${day}/${month}/${year}`
+    dialogData.innerText = `${day}/${month}/${year}`;
+
+    user.time = `${hours}:${minutes}:${seconds}`;
+    user.date = `${day}/${month}/${year}`;
 }
 
 
+dlgBaterPontoRegistro.addEventListener('click', () => {
+    user.type = tipoEntrada.value;
 
+    registers.push(user);
 
-
-
-
-////////////////////////////////////////////////
+    localStorage.setItem('registers', JSON.stringify(registers));
+});

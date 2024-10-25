@@ -31,15 +31,15 @@
                 </div>
                 <div id="dialog-footer">
                     <p>Selecione o tipo de ponto</p>
-                    <select name="Tipo" id="">
-                        <option value="">Entrada</option>
-                        <option value="">Saida</option>
-                        <option value="">Intervalo Ida</option>
-                        <option value="">Intervalo Volta</option>
-                        <option value="">Justificar Falta</option>
-                        <option value="">Marcar hora passada</option>
+                    <select name="Tipo" id="tipo-entrada">
+                        <option value="entrada">Entrada</option>
+                        <option value="saida">Saida</option>
+                        <option value="intervalo">Intervalo Ida</option>
+                        <option value="intervaloVolta">Intervalo Volta</option>
+                        <option value="justificarFalta">Justificar Falta</option>
+                        <option value="pontoPassado">Marcar hora passada</option>
                     </select>
-                    <button>Registrar</button>
+                    <button id="dlg-bater-ponto-registro">Registrar</button>
                 </div>
             </div>
             <div id="dialog-ponto-passado">
@@ -55,18 +55,18 @@
                     <div id="dialog-passado-bottom">
                         <p>Selecione o tipo de ponto:</p>
                         <select name="Tipo" id="">
-                        <option value="">Entrada</option>
-                        <option value="">Saida</option>
-                        <option value="">Intervalo Ida</option>
-                        <option value="">Intervalo Volta</option>
-                        </select>  
+                            <option value="">Entrada</option>
+                            <option value="">Saida</option>
+                            <option value="">Intervalo Ida</option>
+                            <option value="">Intervalo Volta</option>
+                        </select>
                         <button id="btn-registrar-dialog-passado">Registrar</button>
                     </div>
                 </div>
             </div>
         </div>
         <div id="funcoes">
-            <a href="register.html"><button id="btn-registrar" class="botao">Registros</button></a>
+            <a href="../register/index.html"><button id="btn-registrar" class="botao">Registros</button></a>
             <button id="btn-bater-ponto" class="botao">Bater Ponto</button>
             <button class="botao">Calcular</button>
         </div>
@@ -74,7 +74,7 @@
             <p>Javex™ all rights reserved </p>
         </footer>
         <div id="blur-background"></div>
-        <script type="module" src="./script.js"></script>
+        <script src="./script.js"></script>
     </main>
 </body>
 
