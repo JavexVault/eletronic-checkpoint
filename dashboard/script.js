@@ -33,11 +33,13 @@ const dlgBaterPontoRegistro = document.getElementById('dlg-bater-ponto-registro'
 const tipoEntrada = document.getElementById('tipo-entrada');
 const dialogHora = document.getElementById('dialog-hora');
 const dialogData = document.getElementById('dialog-data');
-
-const calcularBtn = document.getElementById('calcular');
+const btnCalcular = document.getElementById('calcular');
 const calculoContent = document.getElementById('calculo-content');
 const fecharCalculoBtn = document.getElementById('fechar-calculo');
 
+const horasInput = document.getElementById('horas-trabalhadas');
+const valorPorHoraInput = document.getElementById('valor-hora');
+const calcularSalarioBtn = document.getElementById('btn-calcular-salario');
 //////////////////////////////////////////
 // Função que faz div 'dialog' aparecer //
 //////////////////////////////////////////
@@ -120,7 +122,7 @@ dlgBaterPontoRegistro.addEventListener('click', () => {
 
 
 // Manipulação do Dialog que aparece ao clicar no botão Calcular do Dashboard //
-calcularBtn.addEventListener('click', () => {
+btnCalcular.addEventListener('click', () => {
     calculoContent.style.display = 'flex';
     blurBackground.style.display = 'block';
 });
@@ -135,4 +137,20 @@ blurBackground.addEventListener('click', () => {
     blurBackground.style.display = 'none';
 });
 
+////////////////////////////////////////////////////////////////////////
 // Função que calcula o salário baseado no número de horas trabalhado //
+////////////////////////////////////////////////////////////////////////
+
+calcularSalarioBtn.addEventListener('click', () => {
+    const horasTrabalhadas = parseFloat(horasInput.value);
+    const valorPorHora = parseFloat(valorPorHoraInput.value);
+
+    // Verifica se os valores são válidos
+    if (!isNaN(horasTrabalhadas) && !isNaN(valorPorHora) && horasTrabalhadas >= 0 && valorPorHora >= 0) {
+        const salario = horasTrabalhadas * valorPorHora;
+        
+        alert(`O salário calculado é: R$ ${salario.toFixed(2)}`); // Formatação em Reais //
+    } else {
+        alert('Por favor, insira valores válidos para horas trabalhadas e valor por hora.');
+    }
+});
