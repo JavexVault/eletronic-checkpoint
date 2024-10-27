@@ -120,6 +120,8 @@ btnRegistrarDialogPassado.addEventListener('click', () => {
 
     horaPassada.push({...horaPassada, userPassado});
     localStorage.setItem('registers-past', JSON.stringify(horaPassada));
+
+    alert("Registrado com sucesso!");
 })
 
 function salvaDataEHora() {
@@ -157,6 +159,8 @@ dlgBaterPontoRegistro.addEventListener('click', () => {
 
     dialogBaterPonto.style.display = 'none';
     blurBackground.style.display = 'none';
+
+    alert("Registrado com sucesso!");
 });
 
 
