@@ -1,4 +1,4 @@
-/*As cores do background são apenas para a visualização das divs*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
     margin: 0;
@@ -7,12 +7,14 @@
 
 body {
     min-height: 100vh;
+    color: white;
 }
 
 main {
     height: 100%;
     width: 100vw;
     display: flex;
+    font-family: 'poppins';
     flex-direction: column;
 }
 
@@ -21,7 +23,7 @@ header {
     width: 100%;
     display: flex;
     flex-direction: row;
-    background-color: blue;
+    background-color: #3498DB;
 }
 
 #logo {
@@ -49,7 +51,7 @@ header {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: red;
+    background-color: #ffffff;
 }
 
 #informacoes {
@@ -58,8 +60,29 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    background-color: orange;
+    justify-content: center;
+    gap: 1rem;
+    background-color: #ECF0F1;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+#informacoes p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+#date, #hour {
+    background-color: #3498DB;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-align: center;
+    width: 80%;
 }
 
 #funcoes {
@@ -68,16 +91,25 @@ header {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-color: green;
+    background-color: #ECF0F1;
 }
 
 .botao {
     height: 3rem;
     width: 15rem;
+    color: #3498DB;
+    font-size: 1.4rem;
     background-color: #f9f9f9;
     border: #f9f9f9;
+    font-family: 'poppins';
     border-radius: 40px;
     cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease
+}
+
+.botao:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
 footer {
@@ -86,7 +118,7 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: blue;
+    background-color: #3498DB;
 }
 
 #dialog-bater-ponto {
@@ -97,8 +129,13 @@ footer {
     z-index: 2;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    background-color: orange;
+    color: black;
+    justify-content: space-between;
+    background-color: #ffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
 }
 
 #dialog-justificar-falta {
@@ -118,33 +155,36 @@ footer {
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 0.5rem;
+    right: 0.5rem;
     width: 2rem;
     height: 2rem;
     background-color: #f9f9f9;
     border: none;
+    border-radius: 50%;
+    font-weight: bold;
     cursor: pointer;
 }
 
 #dialog-header {
-    height: 50%;
+    height: 40%;
     width: 100%;
     display: flex;
-    flex-direction: row;
-    background-color: green;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    color: #333;
 }
-
 #dialog-footer {
-    height: 50%;
+    height: 60%;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    background-color: yellow;
+    gap: 1rem;
 }
 
 #dialog-ponto-passado {
@@ -157,6 +197,16 @@ footer {
     z-index: 3;
     background-color: orange;
     position: absolute;
+}
+
+
+#tipo-entrada {
+    width: 80%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
 #dialog-passado-conteudo {
@@ -174,6 +224,28 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     background-color: burlywood;
+}
+
+#dialog-bater-ponto-botoes {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    justify-content: center;
+}
+
+#dialog-bater-ponto-botoes button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #3498DB;
+    color: #fff;
+}
+
+
+#dialog-bater-ponto-botoes button:hover {
+    background-color: #0056b3;
 }
 
 #dialog-passado-mid {
@@ -268,4 +340,12 @@ footer {
 
 #fechar-calculo:hover {
     background-color: #bbb;
+}
+
+#exit-icon {
+    width: 50px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    
 }
