@@ -18,10 +18,10 @@ function criarRegistro({ name, type, time, date }) {
             <p>${type}</p>
         </div>
         <div class="botoes-info">
-            <button>/</button>
-            <button>X</button>
-            <p>${time}</p>
-            <p>${date}</p>
+            <button class="botoes-info-registro">/</button>
+            <button class="botoes-info-registro">X</button>
+            <p class="data-hora-infos">${time}</p>
+            <p class="data-hora-infos">${date}</p>
         </div>
     `;
     return registroDiv;
