@@ -20,7 +20,6 @@ if (savedUserName) {
 // Variaveis do arquivo dashboard.html //
 /////////////////////////////////////////
 
-
 const btnBaterPonto = document.getElementById('btn-bater-ponto');
 const dialogRegistrar = document.getElementById('dialog-registrar-ponto');
 const fecharDialogBaterPonto = document.getElementById('fechar-dialog-bater-ponto');
@@ -36,6 +35,8 @@ const btnCalcular = document.getElementById('calcular');
 const calculoContent = document.getElementById('calculo-content');
 const fecharCalculoBtn = document.getElementById('fechar-calculo');
 const dlgPontoPassado = document.getElementById('dialog-ponto-passado')
+const fecharDlgPontoPassado = document.getElementById('fechar-dialog-ponto-passado')
+const dlgBaterPontoPassado = document.getElementById('dlg-bater-ponto-passado');
 
 const horasInput = document.getElementById('horas-trabalhadas');
 const valorPorHoraInput = document.getElementById('valor-hora');
@@ -112,13 +113,19 @@ function salvaDataEHora() {
     user.date = `${day}/${month}/${year}`;
 }
 
-dlgBaterPontoRegistro.addEventListener('click', () => {
+    dlgBaterPontoPassado.addEventListener('click', () => {
+        dlgPontoPassado.style.display = "flex"; 
+    })
+    
+    fecharDlgPontoPassado.addEventListener("click", () => {
+        dlgPontoPassado.style.display = "none";
+        dialogBaterPonto.style.display = "none";
+        blurBackground.style.display = "none";
+    })
+
+    dlgBaterPontoRegistro.addEventListener('click', () => {
     user.type = tipoEntrada.value;
 
-    if(tipoEntrada.value === "pontoPassado") {
-        dlgBaterPontoRegistro.style.display = "none";
-        dlgPontoPassado.style.display = "flex"; 
-    }
 
     registers.push({...user});
 
