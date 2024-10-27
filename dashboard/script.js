@@ -115,12 +115,13 @@ setInterval(() => {
 
 // TODO
 btnRegistrarDialogPassado.addEventListener('click', () => {
+ 
+    userPassado.date = dialogPassadoDate.value
+    userPassado.time = dialogPassadoTime.value
+    userPassado.type = dialogPassadoSelect.value
+
     horaPassada.push({...userPassado});
-    // A data está no formado gringo
-    userPassado.date = dialogPassadoDate.value;
-    userPassado.time = dialogPassadoTime.value;
-    userPassado.type = dialogPassadoSelect.value;
-    localStorage.setItem('registers', JSON.stringify(horaPassada));
+    localStorage.setItem('registers-past', JSON.stringify(horaPassada));
 })
 
 function salvaDataEHora() {
@@ -172,6 +173,8 @@ fecharCalculoBtn.addEventListener('click', () => {
 blurBackground.addEventListener('click', () => {
     calculoContent.style.display = 'none';
     blurBackground.style.display = 'none';
+    dialogBaterPonto.style.display = 'none';
+    dlgPontoPassado.style.display = 'none';
 });
 
 ////////////////////////////////////////////////////////////////////////
