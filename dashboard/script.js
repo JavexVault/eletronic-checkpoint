@@ -14,7 +14,6 @@ let registers = []
 const savedUserName = localStorage.getItem('userName');
 if (savedUserName) {
     user.name = savedUserName;
-    localStorage.removeItem('userName');
 }
 
 /////////////////////////////////////////
