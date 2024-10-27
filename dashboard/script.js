@@ -5,7 +5,16 @@ const user = {
     type: '',
 };
 
-let registers = []
+const userPassado = {
+    name: '',
+    date: '',
+    time: '',
+    type: '',
+};
+
+let registers = [];
+
+let horaPassada = [];
 
 ///////////////////////////////////////////
 // Pegando o nome salvo no local storage //
@@ -14,12 +23,17 @@ let registers = []
 const savedUserName = localStorage.getItem('userName');
 if (savedUserName) {
     user.name = savedUserName;
+    userPassado.name = savedUserName;
 }
+
 
 /////////////////////////////////////////
 // Variaveis do arquivo dashboard.html //
 /////////////////////////////////////////
 
+const dialogPassadoDate = document.getElementById('dialog-passado-date');
+const dialogPassadoTime = document.getElementById('dialog-passado-time');
+const dialogPassadoSelect = document.getElementById('dialog-passado-select');
 
 const btnBaterPonto = document.getElementById('btn-bater-ponto');
 const dialogRegistrar = document.getElementById('dialog-registrar-ponto');
@@ -35,6 +49,10 @@ const dialogData = document.getElementById('dialog-data');
 const btnCalcular = document.getElementById('calcular');
 const calculoContent = document.getElementById('calculo-content');
 const fecharCalculoBtn = document.getElementById('fechar-calculo');
+const dlgPontoPassado = document.getElementById('dialog-ponto-passado')
+const fecharDlgPontoPassado = document.getElementById('fechar-dialog-ponto-passado')
+const dlgBaterPontoPassado = document.getElementById('dlg-bater-ponto-passado');
+const btnRegistrarDialogPassado = document.getElementById('btn-registrar-dialog-passado');
 
 const horasInput = document.getElementById('horas-trabalhadas');
 const valorPorHoraInput = document.getElementById('valor-hora');
@@ -95,6 +113,16 @@ setInterval(() => {
     data.innerText = getDate()
 }, 1000)
 
+// TODO
+btnRegistrarDialogPassado.addEventListener('click', () => {
+    horaPassada.push({...userPassado});
+    // A data está no formado gringo
+    userPassado.date = dialogPassadoDate.value;
+    userPassado.time = dialogPassadoTime.value;
+    userPassado.type = dialogPassadoSelect.value;
+    localStorage.setItem('registers', JSON.stringify(horaPassada));
+})
+
 function salvaDataEHora() {
     const date = new Date();
     const day = String(date.getDate()).padStart(2,"0");
@@ -111,7 +139,17 @@ function salvaDataEHora() {
     user.date = `${day}/${month}/${year}`;
 }
 
-dlgBaterPontoRegistro.addEventListener('click', () => {
+    dlgBaterPontoPassado.addEventListener('click', () => {
+        dlgPontoPassado.style.display = "flex"; 
+    })
+    
+    fecharDlgPontoPassado.addEventListener("click", () => {
+        dlgPontoPassado.style.display = "none";
+        dialogBaterPonto.style.display = "none";
+        blurBackground.style.display = "none";
+    })
+
+    dlgBaterPontoRegistro.addEventListener('click', () => {
     user.type = tipoEntrada.value;
 
     registers.push({...user});
