@@ -90,3 +90,8 @@ header {
     background-color: red;
     width: 25px;
 }
+
+#registros-container {
+    max-height: 350px;
+    overflow-y: auto;
+}
