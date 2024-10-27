@@ -35,6 +35,7 @@ const dialogData = document.getElementById('dialog-data');
 const btnCalcular = document.getElementById('calcular');
 const calculoContent = document.getElementById('calculo-content');
 const fecharCalculoBtn = document.getElementById('fechar-calculo');
+const dlgPontoPassado = document.getElementById('dialog-ponto-passado')
 
 const horasInput = document.getElementById('horas-trabalhadas');
 const valorPorHoraInput = document.getElementById('valor-hora');
@@ -113,6 +114,11 @@ function salvaDataEHora() {
 
 dlgBaterPontoRegistro.addEventListener('click', () => {
     user.type = tipoEntrada.value;
+
+    if(tipoEntrada.value === "pontoPassado") {
+        dlgBaterPontoRegistro.style.display = "none";
+        dlgPontoPassado.style.display = "flex"; 
+    }
 
     registers.push({...user});
 
