@@ -1,41 +1,62 @@
-/*As cores do background são apenas para a visualização das divs*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*{
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+body {
+    background-color: #f0f4f8;
+    color: #333;
 }
 
 main {
     min-height: 100vh;
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-#titulo{
+#titulo {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 15vh;
-    background-color: blue;
+    height: 12vh;
+    background-color: #3498db;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#titulo h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 #conteudo {
     display: flex;
     flex-direction: row;
-    height: 80vh;
-    background-color: red;
+    min-height: 60vh;
+    padding: 2rem;
+    background-color: white;
 }
 
 #textoPrincipal {
     width: 50%;
-    height:100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    background-color: green;
+    padding-right: 2rem;
+}
+
+#textoPrincipal p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
 }
 
 #botaoIniciar {
@@ -43,22 +64,82 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
     width: 50%;
-    background-color: orange;
+}
+
+#botaoIniciar button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#botaoIniciar button:hover {
+    background-color: #27ae60;
 }
 
 #cartoes {
-    height: 100vh;
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-around;
-    align-items: center;
-    background-color: pink;
+    align-items: stretch;
+    padding: 2rem;
+    background-color: #ecf0f1;
 }
 
 .cartao {
-    height: 50%;
-    width: 20vw;
-    background-color: brown;
+    flex: 0 1 calc(33.333% - 2rem);
+    margin: 1rem;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cartao:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.cartao h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #3498db;
+}
+
+.cartao p {
+    font-size: 1rem;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    #conteudo {
+        flex-direction: column;
+    }
+
+    #textoPrincipal, #botaoIniciar {
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    .cartao {
+        flex: 0 1 calc(50% - 2rem);
+    }
+}
+
+@media (max-width: 480px) {
+    #titulo h1 {
+        font-size: 2rem;
+    }
+
+    .cartao {
+        flex: 0 1 100%;
+    }
 }
