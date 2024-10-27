@@ -66,8 +66,6 @@ btnBaterPonto.addEventListener('click', () => {
     blurBackground.style.display = 'block';
 
     salvaDataEHora();
-
-    console.log(user);
 });
 
 ///////////////////////////////////////////////
@@ -116,11 +114,11 @@ setInterval(() => {
 // TODO
 btnRegistrarDialogPassado.addEventListener('click', () => {
  
-    userPassado.date = dialogPassadoDate.value
+    userPassado.date = Date(dialogPassadoDate.value).format('dd/MM/YYYY');
     userPassado.time = dialogPassadoTime.value
     userPassado.type = dialogPassadoSelect.value
 
-    horaPassada.push({...userPassado});
+    horaPassada.push({...horaPassada, userPassado});
     localStorage.setItem('registers-past', JSON.stringify(horaPassada));
 })
 
@@ -140,22 +138,25 @@ function salvaDataEHora() {
     user.date = `${day}/${month}/${year}`;
 }
 
-    dlgBaterPontoPassado.addEventListener('click', () => {
-        dlgPontoPassado.style.display = "flex"; 
-    })
-    
-    fecharDlgPontoPassado.addEventListener("click", () => {
-        dlgPontoPassado.style.display = "none";
-        dialogBaterPonto.style.display = "none";
-        blurBackground.style.display = "none";
-    })
+dlgBaterPontoPassado.addEventListener('click', () => {
+    dlgPontoPassado.style.display = "flex"; 
+})
 
-    dlgBaterPontoRegistro.addEventListener('click', () => {
+fecharDlgPontoPassado.addEventListener("click", () => {
+    dlgPontoPassado.style.display = "none";
+    dialogBaterPonto.style.display = "none";
+    blurBackground.style.display = "none";
+})
+
+dlgBaterPontoRegistro.addEventListener('click', () => {
     user.type = tipoEntrada.value;
 
     registers.push({...user});
 
     localStorage.setItem('registers', JSON.stringify(registers));
+
+    dialogBaterPonto.style.display = 'none';
+    blurBackground.style.display = 'none';
 });
 
 

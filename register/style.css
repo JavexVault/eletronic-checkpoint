@@ -45,17 +45,17 @@ header {
     flex-direction: column;
 }
 
-.registro{
+.registro {
     background-color: blanchedalmond;
     margin: 15px;
     padding: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
+
 }
 
-.nome-e-tipo{
+.nome-e-tipo {
     background-color: violet;
     padding-left: 4px;
     padding-right: 4px;
@@ -70,7 +70,7 @@ header {
     font-size: 18px;
 }
 
-.botoes-info{
+.botoes-info {
     background-color: cadetblue;
     padding-left: 4px;
     padding-right: 4px;
@@ -80,18 +80,19 @@ header {
     justify-content: space-evenly;
 }
 
-#editar-registro{
+#editar-registro {
     background-color: yellow;
     width: 25px;
 }
 
-#excluir-registro{
+#excluir-registro {
     color: white;
     background-color: red;
     width: 25px;
 }
 
 #registros-container {
-    max-height: 350px;
+    min-height: 90%;
+    max-height: 96%;
     overflow-y: auto;
 }
