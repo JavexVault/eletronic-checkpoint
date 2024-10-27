@@ -49,19 +49,19 @@
                 <div id="dialog-passado-conteudo">
                     <div id="dialog-passado-top">
                         <p>Digite data:</p>
-                        <input type="date">
+                        <input id="dialog-passado-date" type="date">
                     </div>
                     <div id="dialog-passado-mid">
                         <p>Digite a hora:</p>
-                        <input type="time">
+                        <input id="dialog-passado-time" type="time">
                     </div>
                     <div id="dialog-passado-bottom">
                         <p>Selecione o tipo de ponto:</p>
-                        <select name="Tipo" id="">
-                            <option value="">Entrada</option>
-                            <option value="">Saida</option>
-                            <option value="">Intervalo Ida</option>
-                            <option value="">Intervalo Volta</option>
+                        <select name="Tipo" id="dialog-passado-select">
+                            <option value="entrada">Entrada</option>
+                            <option value="saida">Saida</option>
+                            <option value="intervalo">Intervalo Ida</option>
+                            <option value="intervaloVolta">Intervalo Volta</option>
                         </select>
                         <button id="btn-registrar-dialog-passado">Registrar</button>
                     </div>
