@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Identificação</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
 </head>
-
 <body>
     <div class="container">
         <div class="card">
-            <p>Login</p>
-            <input id="input-login" type="text" placeholder="Digite seu nome">
-            <a href="../dashboard/index.html"><button id="btn-login">Confirmar</button></a>
+            <h1>Bem Vindo</h1>
+            <p>Coloque seu nome de usuário</p>
+            <div class="input-group">
+                <input id="input-login" type="text" placeholder="Digite seu nome" required>
+            </div>
+            <a href="../dashboard/index.html">
+                <button id="btn-login" type="button">Registrar</button>
+            </a>
         </div>
     </div>
-
     <script src="./script.js"></script>
 </body>
-
 </html>
