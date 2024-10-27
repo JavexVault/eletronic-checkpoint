@@ -155,9 +155,6 @@ dlgBaterPontoPassado.addEventListener('click', () => {
     dlgPontoPassado.style.display = "flex"; 
 })
 
-dlgBaterPontoJustificar.addEventListener('click', () => {
-    dlgBaterPontoJustificar.style.display = "flex";
-})
 
 fecharDlgPontoPassado.addEventListener("click", () => {
     dlgPontoPassado.style.display = "none";
