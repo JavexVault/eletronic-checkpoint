@@ -53,9 +53,11 @@ const dlgPontoPassado = document.getElementById('dialog-ponto-passado')
 const fecharDlgPontoPassado = document.getElementById('fechar-dialog-ponto-passado')
 const dlgBaterPontoPassado = document.getElementById('dlg-bater-ponto-passado');
 const btnRegistrarDialogPassado = document.getElementById('btn-registrar-dialog-passado');
-const dlgJustificarFalta = document.getElementById('dialog-justificar-falta');
+const dlgJustificarFalta = document.getElementById('dialog-justificar-falta'); //div
 const justificarInput = document.getElementById('justificar-input');
 const justificarArquivo = document.getElementById('justificar-arquivo');
+const dlgBaterPontoJustificar = document.getElementById('dlg-bater-ponto-justificar-falta') //buton
+const fecharDialogJustificar = document.getElementById('fechar-dialog-justificar-falta')
 
 const horasInput = document.getElementById('horas-trabalhadas');
 const valorPorHoraInput = document.getElementById('valor-hora');
@@ -153,6 +155,10 @@ dlgBaterPontoPassado.addEventListener('click', () => {
     dlgPontoPassado.style.display = "flex"; 
 })
 
+dlgBaterPontoJustificar.addEventListener('click', () => {
+    dlgBaterPontoJustificar.style.display = "flex";
+})
+
 fecharDlgPontoPassado.addEventListener("click", () => {
     dlgPontoPassado.style.display = "none";
     dialogBaterPonto.style.display = "none";
@@ -172,10 +178,15 @@ dlgBaterPontoRegistro.addEventListener('click', () => {
     alert("Registrado com sucesso!");
 });
 
-dlgJustificarFalta.addEventListener('click', () => {
-
+dlgBaterPontoJustificar.addEventListener('click', () => {       //abre a porra do dialog justificar
+    dlgJustificarFalta.style.display = 'flex';
+    dialogBaterPonto.style.display = 'none'
 });
 
+fecharDialogJustificar.addEventListener('click',() => {
+    dlgJustificarFalta.style.display = 'none';
+    blurBackground.style.display = 'none'
+})
 
 // Manipulação do Dialog que aparece ao clicar no botão Calcular do Dashboard //
 btnCalcular.addEventListener('click', () => {
