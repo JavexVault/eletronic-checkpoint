@@ -1,5 +1,6 @@
 // puxar os dados do localStorage para o codigo
 const registers = JSON.parse(localStorage.getItem('registers')) || []; 
+const registersPast = JSON.parse(localStorage.getItem('registers-past')) || []; 
 const registrosContainer = document.getElementById('registros-container');
 
 // funcao que criará divs dentro da elemento pai (registros-container) para que seja inserida cada registro do usuario
@@ -30,4 +31,10 @@ for (let i = 0; i < registers.length; i++) {
     // o prepend serve para fazer uma pilha (colocar os ultimos registros por cima dos primeiros)
     // caso queira colocar ao contrario, usa o comando appendChild
     registrosContainer.prepend(criarRegistro(registers[i]));
+}
+
+for (let j = 0; j < registersPast.length; j++) {
+    // o prepend serve para fazer uma pilha (colocar os ultimos registros por cima dos primeiros)
+    // caso queira colocar ao contrario, usa o comando appendChild
+    registrosContainer.prepend(criarRegistro(registersPast[j]));
 }
