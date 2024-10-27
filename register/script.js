@@ -36,5 +36,5 @@ for (let i = 0; i < registers.length; i++) {
 for (let j = 0; j < registersPast.length; j++) {
     // o prepend serve para fazer uma pilha (colocar os ultimos registros por cima dos primeiros)
     // caso queira colocar ao contrario, usa o comando appendChild
-    registrosContainer.prepend(criarRegistro(registersPast[j]));
+    registrosContainer.appendChild(criarRegistro(registersPast[j]));
 }

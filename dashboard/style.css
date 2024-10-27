@@ -101,6 +101,18 @@ footer {
     background-color: orange;
 }
 
+#dialog-justificar-falta {
+    display: none;
+    height: 20rem;
+    width: 35rem;
+    position: absolute;
+    z-index: 2;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: orange;
+}
+
 #fechar-dialog-bater-ponto {
     display: flex;
     justify-content: center;
@@ -135,7 +147,8 @@ footer {
     background-color: yellow;
 }
 
-#dialog-ponto-passado {      /*Alterar o dsiplay para ver o dialog OBS dialog incompleto e mal feito, infelizmente a noite me consumiu!*/
+#dialog-ponto-passado {
+    /*Alterar o dsiplay para ver o dialog OBS dialog incompleto e mal feito, infelizmente a noite me consumiu!*/
     display: none;
     flex-direction: row;
     height: 20rem;
@@ -150,11 +163,11 @@ footer {
     height: 100%;
     width: 100%;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     background-color: blue;
 }
 
-#dialog-passado-top{
+#dialog-passado-top {
     height: 33.3%;
     width: 100%;
     display: flex;
@@ -163,7 +176,7 @@ footer {
     background-color: burlywood;
 }
 
-#dialog-passado-mid{
+#dialog-passado-mid {
     height: 33.3%;
     width: 100%;
     display: flex;
@@ -172,7 +185,7 @@ footer {
     background-color: yellow;
 }
 
-#dialog-passado-bottom{
+#dialog-passado-bottom {
     height: 33.3%;
     width: 100%;
     display: flex;
@@ -192,7 +205,7 @@ footer {
 }
 
 #calculo-content {
-    display: none; 
+    display: none;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -256,5 +269,3 @@ footer {
 #fechar-calculo:hover {
     background-color: #bbb;
 }
-
-

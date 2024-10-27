@@ -14,7 +14,7 @@ const userPassado = {
 
 let registers = [];
 
-let horaPassada = [];
+//let horaPassada = [];
 
 ///////////////////////////////////////////
 // Pegando o nome salvo no local storage //
@@ -53,6 +53,9 @@ const dlgPontoPassado = document.getElementById('dialog-ponto-passado')
 const fecharDlgPontoPassado = document.getElementById('fechar-dialog-ponto-passado')
 const dlgBaterPontoPassado = document.getElementById('dlg-bater-ponto-passado');
 const btnRegistrarDialogPassado = document.getElementById('btn-registrar-dialog-passado');
+const dlgJustificarFalta = document.getElementById('dialog-justificar-falta');
+const justificarInput = document.getElementById('justificar-input');
+const justificarArquivo = document.getElementById('justificar-arquivo');
 
 const horasInput = document.getElementById('horas-trabalhadas');
 const valorPorHoraInput = document.getElementById('valor-hora');
@@ -113,13 +116,19 @@ setInterval(() => {
 
 // TODO
 btnRegistrarDialogPassado.addEventListener('click', () => {
- 
-    userPassado.date = Date(dialogPassadoDate.value).format('dd/MM/YYYY');
-    userPassado.time = dialogPassadoTime.value
+    let dataString = dialogPassadoDate.value;
+    let partesData = dataString.split('-');
+    const dataFormatada = `${partesData[2]}/${partesData[1]}/${partesData[0]}`;
+
+    userPassado.date = dataFormatada;
+    userPassado.time = `${dialogPassadoTime.value}:00`
     userPassado.type = dialogPassadoSelect.value
 
-    horaPassada.push({...horaPassada, userPassado});
-    localStorage.setItem('registers-past', JSON.stringify(horaPassada));
+    let registrosExistentes = JSON.parse(localStorage.getItem('registers-past')) || [];
+
+    registrosExistentes.push(userPassado);
+
+    localStorage.setItem('registers-past', JSON.stringify(registrosExistentes));
 
     alert("Registrado com sucesso!");
 })
@@ -153,7 +162,7 @@ fecharDlgPontoPassado.addEventListener("click", () => {
 dlgBaterPontoRegistro.addEventListener('click', () => {
     user.type = tipoEntrada.value;
 
-    registers.push({...user});
+    registers.push({...registers, user});
 
     localStorage.setItem('registers', JSON.stringify(registers));
 
@@ -161,6 +170,10 @@ dlgBaterPontoRegistro.addEventListener('click', () => {
     blurBackground.style.display = 'none';
 
     alert("Registrado com sucesso!");
+});
+
+dlgJustificarFalta.addEventListener('click', () => {
+
 });
 
 
