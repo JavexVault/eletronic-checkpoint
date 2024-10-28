@@ -217,22 +217,6 @@ footer {
     /* Logo abaixo do diálogo */
 }
 
-#fechar-dialog-ponto-passado {
-    background: none;
-    border: none;
-    color: #ff606c;
-    /* Pode ajustar para combinar com o design */
-    font-size: 1.5rem;
-    cursor: pointer;
-    align-self: flex-end;
-    transition: color 0.3s ease;
-}
-
-
-#fechar-dialog-ponto-passado:hover {
-    color: #ff2f45;
-}
-
 
 #tipo-entrada {
     width: 80%;
