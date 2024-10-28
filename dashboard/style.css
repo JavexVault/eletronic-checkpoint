@@ -162,6 +162,18 @@ footer {
     color: #fff;
 }
 
+#justificar-input {
+    height: 2rem;
+    width: 22rem;
+    border: 1px solid #80808036;
+    border-radius: 10px;
+}
+
+#justificar-arquivo {
+    color: black;
+    scale: 1.1;
+}
+
 #fechar-dialog-bater-ponto,
 .close-ponto-passado {
     display: flex;
