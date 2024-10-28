@@ -188,16 +188,47 @@ footer {
 }
 
 #dialog-ponto-passado {
-    /*Alterar o dsiplay para ver o dialog OBS dialog incompleto e mal feito, infelizmente a noite me consumiu!*/
     display: none;
-    flex-direction: row;
-    height: 20rem;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    height: auto;
     width: 35rem;
-    position: absolute;
-    z-index: 3;
-    background-color: orange;
-    position: absolute;
-}
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Mantém o diálogo acima de outros elementos */
+  }
+
+  #dialog-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999; /* Logo abaixo do diálogo */
+  }
+
+  #fechar-dialog-ponto-passado {
+    background: none;
+    border: none;
+    color: #ff606c; /* Pode ajustar para combinar com o design */
+    font-size: 1.5rem;
+    cursor: pointer;
+    align-self: flex-end;
+    transition: color 0.3s ease;
+  }
+
+  
+#fechar-dialog-ponto-passado:hover {
+    color: #ff2f45;
+  }
 
 
 #tipo-entrada {
@@ -210,21 +241,13 @@ footer {
 }
 
 #dialog-passado-conteudo {
-    height: 100%;
-    width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: blue;
-}
+    gap: 1rem;
+  }
+  
 
-#dialog-passado-top {
-    height: 33.3%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: burlywood;
-}
+
 
 #dialog-bater-ponto-botoes {
     display: flex;
@@ -248,23 +271,40 @@ footer {
     background-color: #0056b3;
 }
 
-#dialog-passado-mid {
-    height: 33.3%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: yellow;
+
+#dialog-passado-top,
+#dialog-passado-mid,
+#dialog-passado-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-#dialog-passado-bottom {
-    height: 33.3%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: green;
+
+input[type="date"],
+input[type="time"],
+select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
+
+#btn-registrar-dialog-passado {
+    align-self: center;
+    background-color: #44CEF6; /* Pode ajustar para combinar com a paleta */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  
+#btn-registrar-dialog-passado:hover {
+    background-color: #1bb4e1;
+  }
+
 
 #blur-background {
     display: none;

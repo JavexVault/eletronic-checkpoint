@@ -152,7 +152,8 @@ function salvaDataEHora() {
 }
 
 dlgBaterPontoPassado.addEventListener('click', () => {
-    dlgPontoPassado.style.display = "flex"; 
+    dlgPontoPassado.style.display = "flex";
+    dialogBaterPonto.style.display = "none"; 
 })
 
 
