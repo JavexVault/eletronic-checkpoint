@@ -52,8 +52,9 @@ const btnRegistrarDialogPassado = document.getElementById('btn-registrar-dialog-
 const dlgJustificarFalta = document.getElementById('dialog-justificar-falta'); //div
 const justificarInput = document.getElementById('justificar-input');
 const justificarArquivo = document.getElementById('justificar-arquivo');
-const dlgBaterPontoJustificar = document.getElementById('dlg-bater-ponto-justificar-falta') //buton
-const fecharDialogJustificar = document.getElementById('fechar-dialog-justificar-falta')
+const dlgBaterPontoJustificar = document.getElementById('dlg-bater-ponto-justificar-falta'); //buton
+const fecharDialogJustificar = document.getElementById('fechar-dialog-justificar-falta');
+const dlgJustificarFaltaRegistro = document.getElementById('dlg-justificar-falta-registro');
 
 const horasInput = document.getElementById('horas-trabalhadas');
 const valorPorHoraInput = document.getElementById('valor-hora');
@@ -121,14 +122,14 @@ btnRegistrarDialogPassado.addEventListener('click', () => {
     userPassado.date = dataFormatada;
     userPassado.time = `${dialogPassadoTime.value}:00`
     userPassado.type = dialogPassadoSelect.value
-
+    
     let registrosExistentes = JSON.parse(localStorage.getItem('registers-past')) || [];
-
+    
     registrosExistentes.push(userPassado);
+    
+    alert("Registrado com sucesso!");
 
     localStorage.setItem('registers-past', JSON.stringify(registrosExistentes));
-
-    alert("Registrado com sucesso!");
 })
 
 function salvaDataEHora() {
@@ -161,17 +162,17 @@ fecharDlgPontoPassado.addEventListener("click", () => {
 
 dlgBaterPontoRegistro.addEventListener('click', () => {
     user.type = tipoEntrada.value;
-
+    
     let registros = JSON.parse(localStorage.getItem('registers')) || [];
-
+    
     registros.push(user);
+    
+    alert("Registrado com sucesso!");
 
     localStorage.setItem('registers', JSON.stringify(registros));
 
     dialogBaterPonto.style.display = 'none';
     blurBackground.style.display = 'none';
-
-    alert("Registrado com sucesso!");
 });
 
 dlgBaterPontoJustificar.addEventListener('click', () => {       //abre a porra do dialog justificar
@@ -200,6 +201,43 @@ blurBackground.addEventListener('click', () => {
     blurBackground.style.display = 'none';
     dialogBaterPonto.style.display = 'none';
     dlgPontoPassado.style.display = 'none';
+    dlgJustificarFalta.style.display = 'none';
+});
+
+dlgJustificarFaltaRegistro.addEventListener('click', () => {
+    const textoJustificativa = justificarInput.value;
+    const arquivoJustificativa = justificarArquivo.files[0];
+
+    const justificativa = {
+        texto: textoJustificativa,
+        arquivo: null,
+    };
+
+    if (arquivoJustificativa) {
+        const reader = new FileReader();
+        
+        reader.onload = function(event) {
+            justificativa.arquivo = event.target.result;
+            
+            let justificados = JSON.parse(localStorage.getItem('justificados')) || [];
+            
+            justificados.push(justificativa);
+            
+            alert('Justificativa salva com sucesso!');
+            
+            localStorage.setItem('justificados', JSON.stringify(justificados));
+        };
+
+        reader.readAsDataURL(arquivoJustificativa);
+    } else {
+        let justificados = JSON.parse(localStorage.getItem('justificados')) || [];
+        
+        justificados.push(justificativa);
+        
+        alert('Justificativa de texto salva com sucesso!');
+        
+        localStorage.setItem('justificados', JSON.stringify(justificados));
+    }
 });
 
 ////////////////////////////////////////////////////////////////////////
