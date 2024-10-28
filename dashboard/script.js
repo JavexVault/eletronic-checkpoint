@@ -12,10 +12,6 @@ const userPassado = {
     type: '',
 };
 
-let registers = [];
-
-//let horaPassada = [];
-
 ///////////////////////////////////////////
 // Pegando o nome salvo no local storage //
 ///////////////////////////////////////////
@@ -165,9 +161,11 @@ fecharDlgPontoPassado.addEventListener("click", () => {
 dlgBaterPontoRegistro.addEventListener('click', () => {
     user.type = tipoEntrada.value;
 
-    registers.push({...registers, user});
+    let registros = JSON.parse(localStorage.getItem('registers')) || [];
 
-    localStorage.setItem('registers', JSON.stringify(registers));
+    registros.push(user);
+
+    localStorage.setItem('registers', JSON.stringify(registros));
 
     dialogBaterPonto.style.display = 'none';
     blurBackground.style.display = 'none';
