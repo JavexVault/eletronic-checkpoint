@@ -151,7 +151,8 @@ footer {
     background-color: orange;
 }
 
-#fechar-dialog-bater-ponto {
+#fechar-dialog-bater-ponto,
+.close-ponto-passado {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -247,9 +248,6 @@ footer {
     flex-direction: column;
     gap: 1rem;
 }
-
-
-
 
 #dialog-bater-ponto-botoes {
     display: flex;
