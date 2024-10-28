@@ -76,12 +76,12 @@ header {
     background-color: violet;
     padding-left: 4px;
     padding-right: 4px;
-    width: 10%;
-    height: 100%;
+    width: 8rem;
+    height: 80px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    border-radius: 20px;
+    border-radius: 5px;
     color: #fff;
     text-shadow: 1px 1px 3px black;
 }
@@ -96,7 +96,7 @@ header {
     padding-left: 4px;
     padding-right: 4px;
     height: 80px;
-    width: 80px;
+    width: 8rem;
     display: flex;
     border-radius: 5px;
     flex-direction: column;
@@ -135,6 +135,7 @@ header {
     border-radius: 5px;
     transition-duration: 1s;
     border: none;
+    
 }
 
 .botoes-info-registro:hover {
